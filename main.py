@@ -15,7 +15,7 @@ app = FastAPI(docs_url=None, openapi_url=None)
 # CORSミドルウェアを有効にする
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://kosen-intercollegiate-ynori123s-projects.vercel.app", "http://kosen-intercollegiate-ynori123s-projects.vercel.app"],  # 許可するオリジンを指定
+    allow_origins=["https://kosen-intercollegiate-ynori123s-projects.vercel.app", "http://kosen-intercollegiate-ynori123s-projects.vercel.app", "https://kosen-intercollegiate.vercel.app"],  # 許可するオリジンを指定
     allow_credentials=True,
     allow_methods=["*"],  # 許可するHTTPメソッドを指定（"*"はすべてのメソッドを許可）
     allow_headers=["*"],  # 許可するヘッダーを指定（"*"はすべてのヘッダーを許可）
