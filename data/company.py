@@ -1,4 +1,5 @@
-from main import host
+host = "https://sempaku-shukatsu-api.onrender.com"
+
 companies = [
     {
         "id": "58697b80-a66d-4d97-9b40-937f4a6a5d18",
