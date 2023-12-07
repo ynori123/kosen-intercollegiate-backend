@@ -21,6 +21,7 @@ app.add_middleware(
     allow_headers=["*"],  # 許可するヘッダーを指定（"*"はすべてのヘッダーを許可）
 )
 app.mount("/img", StaticFiles(directory="img"), name="img")
+host = "https://sempaku-shukatsu-api.onrender.com"
 
 
 @app.get("/offers")
