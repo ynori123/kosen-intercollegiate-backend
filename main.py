@@ -2,6 +2,7 @@ from turtle import title
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+from pydantic import BaseModel
 
 # import data
 from data.offer import offers
@@ -71,11 +72,15 @@ async def get_company(company_id: str):
         "code" : 1,
         "data" : {}
     }
+    
+class LoginShema(BaseModel):
+    email: str
+    password: str
 
 @app.post("/login")
-async def login(username: str, password: str):
+async def login(data: LoginShema):
     for user in users:
-        if user.get("email") == username and user.get(password) == password:
+        if user.get("email") == data.email and user.get("password") == data.password:
             return {
                 "code" : 0,
                 "data" : {
