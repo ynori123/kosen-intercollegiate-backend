@@ -32,7 +32,7 @@ companies = [
         "url" : "https://www.tagpoat-pro.co.jp/"
     },
     {
-        "id": "a8b8458e-37b3-400b-826a-6c62e682a091",
+        "id": "1db4d9f7-4163-43dd-b6b7-d7eddded764e",
         "name": "Ever Blue International",
         "tag" : ["商船"],
         "description" : "Ever Blue Internationalは世界最大級の商船会社である．",
