@@ -10,12 +10,12 @@ from data.company import companies
 from data.user import users
 
 
-app = FastAPI(docs_url=None, openapi_url=None)
+app = FastAPI(openapi_url=None, docs_url=None, redoc_url=None)
 
 # CORSミドルウェアを有効にする
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://kosen-intercollegiate-ynori123s-projects.vercel.app", "http://kosen-intercollegiate-ynori123s-projects.vercel.app", "https://kosen-intercollegiate.vercel.app"],  # 許可するオリジンを指定
+    allow_origins=["https://kosen-intercollegiate-ynori123s-projects.vercel.app", "http://kosen-intercollegiate-ynori123s-projects.vercel.app", "https://kosen-intercollegiate.vercel.app", "http://localhost:3000"],  # 許可するオリジンを指定
     allow_credentials=True,
     allow_methods=["*"],  # 許可するHTTPメソッドを指定（"*"はすべてのメソッドを許可）
     allow_headers=["*"],  # 許可するヘッダーを指定（"*"はすべてのヘッダーを許可）
@@ -83,11 +83,10 @@ async def login(data: LoginShema):
         if user.get("email") == data.email and user.get("password") == data.password:
             return {
                 "code" : 0,
-                "data" : {
-                    "token" : user.get("token")
-                }
+                "token" : user.get("token")
+                
             }
     return {
         "code" : 1,
-        "data" : {}
+        "token" : ""
     }
